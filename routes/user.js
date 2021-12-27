@@ -1,15 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const { singUp } = require('../Controllers/user')
-
-router.post("/signUp", (req, res) => {
-    const singUpResult = singUp(req.body)
-
-})
+const { singUp,singIn } = require('../Controllers/user')
 
 
+router.post("/signup",singUp);
+router.post("/signin",singIn)
 
-
-//Exporting Routing modules
 module.exports = router;
